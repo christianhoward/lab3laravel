@@ -9,19 +9,6 @@ use App\Http\Controllers\Controller;
 
 class playerController extends Controller
 {
-   /* public function storeAttributes() {
-        $data->playername = Input::get('Player_Name');
-        $data->age = Input::get('Age');
-        $data->city = Input::get('City');
-        $data->country = Input::get('Country');
-        $data->gender = Input::get('Gender');
-        $data->handedness = Input::get('Handedness');
-        $data->broom = Input::get('Broom');
-        $data->position = Input::get('Position');
-        $data->team = Input::get('Team');
-        $data->favoritecolor = Input::get('Favorite_Color');
-        $data->headshot = Input::get('Headshot');
-    } */
     
     public function readPlayers() {
         $data = DB::table('lara_players')->get();
