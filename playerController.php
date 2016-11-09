@@ -18,6 +18,7 @@ class playerController extends Controller
     
     public function readSpecificPlayer($id) {
         return lara_player::find($id);
+        return json_encode(array($data));
     }
     /*
     public function addPlayer() {
