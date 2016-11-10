@@ -20,51 +20,23 @@ class playerController extends Controller
         return lara_player::find($id);
         return json_encode(array($data));
     }
-    /*
-    public function addPlayer() {
-        $data = new lara_player;
-        $data->playername = Input::get('Player_Name');
-        $data->age = Input::get('Age');
-        $data->city = Input::get('City');
-        $data->country = Input::get('Country');
-        $data->gender = Input::get('Gender');
-        $data->handedness = Input::get('Handedness');
-        $data->broom = Input::get('Broom');
-        $data->position = Input::get('Position');
-        $data->team = Input::get('Team');
-        $data->favoritecolor = Input::get('Favorite_Color');
-        $data->headshot = Input::get('Headshot');
-        $data->save();
-        
-        Session::flash('message', 'Successfully created player!');
-        return json_encode($data);
+
+    public function addPlayer(Request $request) {
+        $input = $request->all();
+        $input = lara_player::create($input);
+        return json_encode(array($data));
     }
     
-    public function updatePlayer($id) {
+    public function updatePlayer($id, Request $request) {
         $data = lara_player::find($id);
-        $data->playername = Input::get('Player_Name');
-        $data->age = Input::get('Age');
-        $data->city = Input::get('City');
-        $data->country = Input::get('Country');
-        $data->gender = Input::get('Gender');
-        $data->handedness = Input::get('Handedness');
-        $data->broom = Input::get('Broom');
-        $data->position = Input::get('Position');
-        $data->team = Input::get('Team');
-        $data->favoritecolor = Input::get('Favorite_Color');
-        $data->headshot = Input::get('Headshot');
-        
-        Session::flash('message', 'Successfully updated player!');
-        return json_encode($data);
+        $input = $request->all();
+        $data->fill($input)->save();
+        return json_encode(array($data));
     }
     
     public function deletePlayer($id) {
-        //DB::table('lara_players')->where('id', $id)->delete();
         $data = lara_player::find($id);
         $data->delete();
-        
-        Session::flash('message', 'Successfully deleted the player!');
-        return Redirect::to('players');
+        return json_encode(array($data));
     }
-    */
 }
