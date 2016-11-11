@@ -22,7 +22,7 @@ Route::get('players', 'playerController@readPlayers');
 Route::get('/players/{id}', 'playerController@readSpecificPlayer');
 
 //update specific player record
-Route::get('players/{id}/edit', 'playerController@updatePlayer');
+Route::post('players/{id}/edit', 'playerController@updatePlayer');
 
 //create a player record
 Route::post('players/form', 'playerController@addPlayer');
