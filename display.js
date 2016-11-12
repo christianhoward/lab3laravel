@@ -35,8 +35,15 @@ $(document).ready(function(){
     // Handle form submit event for both update & create
     // if the ID_FIELD is present the server would update the database otherwise the server would create a record in the database
     $('#container').on('submit', '#my-form', function(event) {
-        event.preventDefault();
-        submitForm(baseURL, $(this));
+        var id = $('#id').val();
+        console.log(id);
+        if (id != "") {
+            event.preventDefault();
+            submitForm(baseURL+"/players/"+id+"/edit", $(this));
+        } else {
+            event.preventDefault();
+            submitForm(baseURL+"/players/post", $(this));
+        }
     });
     
     // Handle table click event for edit
