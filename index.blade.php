@@ -8,10 +8,11 @@
         <link rel="stylesheet" href="{{ URL::asset('/css/website-desktop.css') }}" media="screen and (min-width: 769px)" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script type="text/javascript" src="{{ URL::asset('/js/display.js') }}"></script>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
     <body>
         <header>
-            <h1><a href="index.html">Quidditch Hooligans</a></h1>
+            <h1><a href="http://www.christianhoward.net/laravel">Quidditch Hooligans</a></h1>
         </header>
         <br>
         <!-- Other HTML content -->
