@@ -25,7 +25,7 @@ Route::get('/players/{id}', 'playerController@readSpecificPlayer');
 Route::post('players/{id}/edit', 'playerController@updatePlayer');
 
 //create a player record
-Route::post('players/form', 'playerController@addPlayer');
+Route::post('players/post', 'playerController@addPlayer');
 
 //delete a player record
 Route::get('players/{id}/delete', 'playerController@deletePlayer');
