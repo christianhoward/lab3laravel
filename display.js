@@ -1,9 +1,11 @@
 // this is the base url to which all your requests will be made
 var baseURL = window.location.origin + "/laravel";
 $(document).ready(function(){
-    /*$.get(baseURL+'?get=session', function(data) {
-        $('#session').html('session = ' + data);
-    }); */
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     $('#table').click(function(event) { // generates the table
         // change the url parameters based on your API here
         // Using an JQuery AJAX GET request to get data form the server 
